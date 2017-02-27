@@ -21,7 +21,7 @@
         <entry file="file://$PROJECT_DIR$/shuttleapi/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="220">
-              <caret line="125" column="16" lean-forward="false" selection-start-line="125" selection-start-column="16" selection-end-line="125" selection-end-column="16" />
+              <caret line="125" column="51" lean-forward="false" selection-start-line="125" selection-start-column="51" selection-end-line="125" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -776,7 +776,7 @@
     <entry file="file://$PROJECT_DIR$/shuttleapi/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="125" column="16" lean-forward="false" selection-start-line="125" selection-start-column="16" selection-end-line="125" selection-end-column="16" />
+          <caret line="125" column="51" lean-forward="false" selection-start-line="125" selection-start-column="51" selection-end-line="125" selection-end-column="51" />
           <folding />
         </state>
       </provider>
