@@ -1,4 +1,4 @@
 dj-database-url==0.4.1
 Django==1.9
 whitenoise==2.0.6
-rest_framework
+djangorestframework==3.5.4
