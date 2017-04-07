@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'trips.apps.TripsConfig',
     'topups.apps.TopupsConfig',
-    'drivers.apps.DriversConfig'
+    'drivers.apps.DriversConfig',
+    'timestamp.apps.TimestampConfig'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -123,4 +124,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_URL = 'https://knustshuttleapi.herokuapp.com/static/'
+# STATIC_URL = 'https://knustshuttleapi.herokuapp.com/static/'
+STATIC_URL = '/static/'

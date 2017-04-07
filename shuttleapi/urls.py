@@ -20,6 +20,7 @@ from users import views as users_views
 from trips import views as trips_views
 from topups import views as topups_views
 from drivers import views as drivers_views
+from timestamp import views as timestamp_views
 from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
@@ -27,5 +28,8 @@ urlpatterns = [
     url(r'^users/', users_views.UserList.as_view()),
     url(r'^topups/', topups_views.TopupsList.as_view()),
     url(r'^trips/', trips_views.TripsList.as_view()),
-    url(r'^drivers/', drivers_views.DriversList.as_view())
+    url(r'^drivers/', drivers_views.DriversList.as_view()),
+    url(r'^current-time/', timestamp_views.TimestampList.as_view())
+
+    # url(r'^static/', )
 ]
