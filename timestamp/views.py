@@ -11,7 +11,13 @@ import datetime
 class TimestampList(APIView):
 
     def get(self, request):
-        return Response(datetime.datetime.now())
+        cur_datetime = str(datetime.datetime.now())
+        cur_datetime1 = cur_datetime[2:19]
+        cur_datetime2 = cur_datetime[-6:-3]
+        cur_datetime = cur_datetime1 + cur_datetime2
+        cur_datetime = cur_datetime.replace('-', '/')
+        cur_datetime = cur_datetime.replace(' ', ',')
+        return Response(cur_datetime)
 
     def post(self, request):
         pass
