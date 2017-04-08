@@ -5,6 +5,7 @@ from rest_framework.response import Response
 # from .models import Timestamp
 # from .serializers import TimestampSerializer
 from django.utils import timezone
+from django.http import HttpResponse
 
 
 # timestamp/
@@ -17,7 +18,13 @@ class TimestampList(APIView):
         cur_datetime = cur_datetime1 + cur_datetime2
         cur_datetime = cur_datetime.replace('-', '/')
         cur_datetime = cur_datetime.replace(' ', ',')
-        return Response(cur_datetime)
+        return HttpResponse(cur_datetime)
 
     def post(self, request):
-        pass
+        cur_datetime = str(timezone.now())
+        cur_datetime1 = cur_datetime[2:19]
+        cur_datetime2 = cur_datetime[-6:-3]
+        cur_datetime = cur_datetime1 + cur_datetime2
+        cur_datetime = cur_datetime.replace('-', '/')
+        cur_datetime = cur_datetime.replace(' ', ',')
+        return HttpResponse(cur_datetime)

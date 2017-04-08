@@ -29,7 +29,7 @@ urlpatterns = [
     url(r'^topups/', topups_views.TopupsList.as_view()),
     url(r'^trips/', trips_views.TripsList.as_view()),
     url(r'^drivers/', drivers_views.DriversList.as_view()),
-    url(r'^current-time/', timestamp_views.TimestampList.as_view())
+    url(r'^time/', timestamp_views.TimestampList.as_view())
 
     # url(r'^static/', )
 ]
