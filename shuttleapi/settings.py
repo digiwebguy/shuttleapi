@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'trips.apps.TripsConfig',
     'topups.apps.TopupsConfig',
     'drivers.apps.DriversConfig',
-    'timestamp.apps.TimestampConfig'
+    'timestamp.apps.TimestampConfig',
+    'demo.apps.DemoConfig'
 ]
 
 MIDDLEWARE_CLASSES = [

@@ -21,15 +21,21 @@ from trips import views as trips_views
 from topups import views as topups_views
 from drivers import views as drivers_views
 from timestamp import views as timestamp_views
+from demo import views as demo_views
 from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^users/batch_trip_payment', users_views.PayForTrips.as_view()),
     url(r'^users/', users_views.UserList.as_view()),
     url(r'^topups/', topups_views.TopupsList.as_view()),
     url(r'^trips/', trips_views.TripsList.as_view()),
     url(r'^drivers/', drivers_views.DriversList.as_view()),
-    url(r'^time/', timestamp_views.TimestampList.as_view())
+    url(r'^time/', timestamp_views.TimestampList.as_view()),
+    # url(r'^smartgrid/users/TX149/lights-on', demo_views.TurnOnLights.as_view()),
+    # url(r'^smartgrid/users/TX149/lights-on', demo_views.TurnOnLights.as_view()),
+    url(r'^smartgrid/(?P<pk>[0-9])/', demo_views.DemoList.as_view()),
+    url(r'^smartgrid/', demo_views.DemoList.as_view())
 
     # url(r'^static/', )
 ]
