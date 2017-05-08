@@ -21,6 +21,9 @@ from trips import views as trips_views
 from topups import views as topups_views
 from drivers import views as drivers_views
 from timestamp import views as timestamp_views
+from shuttle_stations import views as shuttle_station_views
+from shuttle_locations import views as shuttle_locations_views
+from direction_options import views as direction_options_views
 from demo import views as demo_views
 from rest_framework.urlpatterns import format_suffix_patterns
 
@@ -34,8 +37,12 @@ urlpatterns = [
     url(r'^time/', timestamp_views.TimestampList.as_view()),
     # url(r'^smartgrid/users/TX149/lights-on', demo_views.TurnOnLights.as_view()),
     # url(r'^smartgrid/users/TX149/lights-on', demo_views.TurnOnLights.as_view()),
-    url(r'^smartgrid/(?P<pk>[0-9])/', demo_views.DemoList.as_view()),
-    url(r'^smartgrid/', demo_views.DemoList.as_view())
+    # url(r'^smartgrid/(?P<pk>[0-9])/', demo_views.DemoList.as_view()),
+    # url(r'^smartgrid/', demo_views.DemoList.as_view())
+    url(r'^shuttle_stations/(?P<pk>[0-9])/direction_options/', direction_options_views.DirectionOptionsByShuttleStationId.as_view()),
+    url(r'^shuttle_stations/', shuttle_station_views.ShuttleStationsList.as_view()),
+    url(r'^shuttle_locations/', shuttle_locations_views.ShuttleLocationsList.as_view()),
+    url(r'^direction_options/', direction_options_views.DirectionOptionsList.as_view())
 
     # url(r'^static/', )
 ]

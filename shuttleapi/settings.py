@@ -44,6 +44,12 @@ INSTALLED_APPS = [
     'topups.apps.TopupsConfig',
     'drivers.apps.DriversConfig',
     'timestamp.apps.TimestampConfig',
+    'area_points.apps.AreaPointsConfig',
+    'shuttle_stations.apps.ShuttleStationsConfig',
+    'shuttle_locations.apps.ShuttleLocationsConfig',
+    'alerts.apps.AlertsConfig',
+    'alert_statuses.apps.AlertStatusesConfig',
+    'direction_options.apps.DirectionOptionsConfig',
     'demo.apps.DemoConfig'
 ]
 

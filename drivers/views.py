@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import Driver
 from .serializers import DriversSerializer
-# trips/
+
 class DriversList(APIView):
 
     def get(self, request):
