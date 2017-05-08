@@ -25,7 +25,7 @@ SECRET_KEY = '^xjpi9ahy#)$ve@62)j55$=&qsz^ci5gchd0gw#e^^#w873)l6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["digiwebguy.pythonanywhere.com"]
 
 
 # Application definition
