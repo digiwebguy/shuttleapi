@@ -24,6 +24,7 @@ from timestamp import views as timestamp_views
 from shuttle_stations import views as shuttle_station_views
 from shuttle_locations import views as shuttle_locations_views
 from direction_options import views as direction_options_views
+from alerts import views as alerts_views
 from demo import views as demo_views
 from rest_framework.urlpatterns import format_suffix_patterns
 
@@ -42,7 +43,10 @@ urlpatterns = [
     url(r'^shuttle_stations/(?P<pk>[0-9])/direction_options/', direction_options_views.DirectionOptionsByShuttleStationId.as_view()),
     url(r'^shuttle_stations/', shuttle_station_views.ShuttleStationsList.as_view()),
     url(r'^shuttle_locations/', shuttle_locations_views.ShuttleLocationsList.as_view()),
-    url(r'^direction_options/', direction_options_views.DirectionOptionsList.as_view())
+    url(r'^direction_options/', direction_options_views.DirectionOptionsList.as_view()),
+    url(r'^alerts/', alerts_views.AlertsList.as_view()),
+    url(r'^pending_alerts/', alerts_views.PendingAlertsList.as_view()),
+    url(r'^pending_alerts_in_shuttle_stations/', shuttle_station_views.PendingAlertsInShuttleStationsList.as_view())
 
     # url(r'^static/', )
 ]

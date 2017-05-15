@@ -10,8 +10,8 @@ class Alert(models.Model):
     shuttle_station_id = models.ForeignKey(ShuttleStation, related_name="alerts")
     direction_id = models.ForeignKey(DirectionOption, related_name="alerts")
     alert_time = models.DateTimeField()
-    driver_accepted_id = models.ForeignKey(Driver)
-    accepted_time = models.DateTimeField()
+    driver_accepted_id = models.ForeignKey(Driver, null=True, blank=True)
+    accepted_time = models.DateTimeField(null=True, blank=True)
     status_id = models.ForeignKey(AlertStatus, related_name="alerts", default='1')
 
     def __str__(self):

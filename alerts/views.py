@@ -14,3 +14,12 @@ class AlertsList(APIView):
 
     def post(self):
         pass
+
+
+class PendingAlertsList(APIView):
+
+    def get(self, request):
+        alerts = Alert.objects.filter(status_id=2)
+        serializer = AlertSerializer(alerts, many=True)
+        return Response(serializer.data)
+
