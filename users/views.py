@@ -6,6 +6,7 @@ from .models import User
 from .serializers import UserSerializer
 from rest_framework.parsers import JSONParser
 from django.utils.six import BytesIO
+import json
 
 
 # users/
@@ -32,7 +33,10 @@ class PayForTrips(APIView):
         try:
             user = User.objects.get(index_number=card_number)
         except User.DoesNotExist:
-            return Response('User Doesnt exist',status=status.HTTP_404_NOT_FOUND)
+            response_data = {}
+            response_data['result'] = 'error'
+            response_data['message'] = 'User Does Not Exist'
+            return Response(json.dumps(response_data),status=status.HTTP_404_NOT_FOUND)
 
         print(user)
         user.amount -=1
