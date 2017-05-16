@@ -36,22 +36,37 @@ class PayForTrips(APIView):
             response_data = {}
             response_data['result'] = 'error'
             response_data['message'] = 'User Does Not Exist'
-            return Response(json.dumps(response_data),status=status.HTTP_404_NOT_FOUND)
+            return Response(response_data,status=status.HTTP_404_NOT_FOUND)
 
         print(user)
-        user.amount -=1
-        user.save()
-        # for index_number in request.data:
-        #     print(index_number + "; ")
-        #     user = User.objects.get(index_number=index_number)
-        #     print(user)
-        #     print("old user amount" + str(user.amount))
-        #     user.amount -= 1
-        #     print("new user amount" + str(user.amount))
-        #     user.save()
-        # serializer = UserSerializer(user)
-        # if serializer.is_valid():
-        #     serializer.save()
-        #     return Response(serializer.data, status=status.HTTP_201_CREATED)
-        # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        return Response(status=status.HTTP_200_OK)
+        if user.amount < 1:
+            response_data = {}
+            response_data['result'] = 'failure'
+            response_data['message'] = 'Insufficient Funds'
+            return Response(response_data, status=status.HTTP_200_OK)
+        else:
+            user.amount -=1
+            user.save()
+            response_data = {}
+            response_data['result'] = 'success'
+            response_data['message'] = 'Payment Successful'
+            return Response(response_data, status=status.HTTP_200_OK)
+
+
+
+
+
+
+            # for index_number in request.data:
+            #     print(index_number + "; ")
+            #     user = User.objects.get(index_number=index_number)
+            #     print(user)
+            #     print("old user amount" + str(user.amount))
+            #     user.amount -= 1
+            #     print("new user amount" + str(user.amount))
+            #     user.save()
+            # serializer = UserSerializer(user)
+            # if serializer.is_valid():
+            #     serializer.save()
+            #     return Response(serializer.data, status=status.HTTP_201_CREATED)
+            # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
