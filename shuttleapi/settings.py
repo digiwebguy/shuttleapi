@@ -69,6 +69,8 @@ ROOT_URLCONF = 'shuttleapi.urls'
 
 CORS_ORIGIN_ALLOW_ALL = True
 
+CORS_ORIGIN_WHITELIST = ("*")
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
