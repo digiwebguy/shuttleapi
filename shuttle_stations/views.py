@@ -21,7 +21,7 @@ class ShuttleStationsList(APIView):
 class PendingAlertsInShuttleStationsList(APIView):
     def get(self, request):
         shuttleStations = ShuttleStation.objects.all()
-        # shuttleStations = ShuttleStation.objects.exlude(direction_options.option__exact="Towards Commercial")
+        # shuttleStations = ShuttleStation.objects.exclude(direction_options.option__exact="Towards Commercial")
         serializer = ShuttleStationAlertsSerializer(shuttleStations, many=True)
         return Response(serializer.data)
 

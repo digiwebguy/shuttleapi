@@ -42,11 +42,13 @@ urlpatterns = [
     # url(r'^smartgrid/', demo_views.DemoList.as_view())
     url(r'^shuttle_stations/(?P<pk>[0-9])/direction_options/', direction_options_views.DirectionOptionsByShuttleStationId.as_view()),
     url(r'^shuttle_stations/', shuttle_station_views.ShuttleStationsList.as_view()),
+    url(r'^shuttle_locations/(?P<pk>[0-9])/', shuttle_locations_views.ShuttleLocationsList.as_view()),
     url(r'^shuttle_locations/', shuttle_locations_views.ShuttleLocationsList.as_view()),
     url(r'^direction_options/', direction_options_views.DirectionOptionsList.as_view()),
     url(r'^alerts/', alerts_views.AlertsList.as_view()),
     url(r'^pending_alerts/', alerts_views.PendingAlertsList.as_view()),
-    url(r'^pending_alerts_in_shuttle_stations/', shuttle_station_views.PendingAlertsInShuttleStationsList.as_view())
+    url(r'^pending_alerts_in_shuttle_stations/', shuttle_station_views.PendingAlertsInShuttleStationsList.as_view()),
+    url(r'^accept_alerts/', alerts_views.AcceptAlerts.as_view())
 
     # url(r'^static/', )
 ]

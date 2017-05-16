@@ -14,3 +14,15 @@ class ShuttleLocationsList(APIView):
 
     def post(self):
         pass
+
+    def put(self, request,pk=None):
+        try:
+            shuttleLocation = ShuttleLocation.objects.get(driver_id=pk)
+        except ShuttleLocation.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        serializer = ShuttleLocationSerializer(shuttleLocation, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

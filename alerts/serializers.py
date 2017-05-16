@@ -7,4 +7,4 @@ class AlertSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Alert
-        fields = ('id', 'alert_time', "shuttle_station_id", "shuttle_station_name", "direction_id", "direction")
+        fields = ('id', 'alert_time', "shuttle_station_id", "shuttle_station_name", "direction_id", "direction", "status_id")
