@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'timestamp.apps.TimestampConfig',
     'area_points.apps.AreaPointsConfig',
     'shuttle_stations.apps.ShuttleStationsConfig',
+    'vouchers.apps.VouchersConfig',
     'shuttle_locations.apps.ShuttleLocationsConfig',
     'alerts.apps.AlertsConfig',
     'alert_statuses.apps.AlertStatusesConfig',

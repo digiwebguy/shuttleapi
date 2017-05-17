@@ -48,7 +48,8 @@ urlpatterns = [
     url(r'^alerts/', alerts_views.AlertsList.as_view()),
     url(r'^pending_alerts/', alerts_views.PendingAlertsList.as_view()),
     url(r'^pending_alerts_in_shuttle_stations/', shuttle_station_views.PendingAlertsInShuttleStationsList.as_view()),
-    url(r'^accept_alerts/', alerts_views.AcceptAlerts.as_view())
+    url(r'^accept_alerts/', alerts_views.AcceptAlerts.as_view()),
+    # url(r'^topups/', topups_views.DoTopup.as_view())
 
     # url(r'^static/', )
 ]
