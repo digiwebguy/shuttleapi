@@ -31,6 +31,7 @@ from rest_framework.urlpatterns import format_suffix_patterns
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^users/batch_trip_payment', users_views.PayForTrips.as_view()),
+    url(r'^users/(?P<pk>[0-9])/', users_views.UserById.as_view()),
     url(r'^users/', users_views.UserList.as_view()),
     url(r'^topups/', topups_views.TopupsList.as_view()),
     url(r'^trips/', trips_views.TripsList.as_view()),

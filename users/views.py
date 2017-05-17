@@ -52,10 +52,12 @@ class PayForTrips(APIView):
             response_data['message'] = 'Payment Successful'
             return Response(response_data, status=status.HTTP_200_OK)
 
+class UserById(APIView):
 
-
-
-
+    def get(self, request, pk):
+        users = User.objects.filter(id=pk)
+        serializer = UserSerializer(users, many=True)
+        return Response(serializer.data)
 
             # for index_number in request.data:
             #     print(index_number + "; ")
